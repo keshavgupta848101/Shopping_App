@@ -1,0 +1,58 @@
+<%- include("../partials/header") %>
+<%- include("../partials/navbar") %>
+
+
+<div class="container">
+    <form class="needs-validation" action="/products" method="POST" novalidate style="margin-top: 100px;">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Product Name" name="product[name]" required>
+          <div id="emailHelp" class="form-text">Adding Product to your cart</div>
+        </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">IMG URL</label>
+          <input type="text" class="form-control"  placeholder="Img URL" id="img"name="product[img]" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price in $</label>
+            <input type="number" class="form-control"  placeholder="Product Price" id="price" name="product[price]" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control"  id="desc" cols="30" rows="5" name="product[desc]" required></textarea>
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<%- include("../partials/footer") %>
+
+
+
+
+

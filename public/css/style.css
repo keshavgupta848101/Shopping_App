@@ -1,0 +1,11 @@
+
+body{
+    background-color: yellow;
+}
+.card{
+    padding: 8px;
+}
+img{
+    width: 450px;
+    height: 300px;
+}
