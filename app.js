@@ -63,7 +63,7 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'/views'))
-seedDb()
+//seedDb()
 
 app.use(productRoutes);
 app.use(authRoutes);
